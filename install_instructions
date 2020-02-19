@@ -1,0 +1,29 @@
+#This code makes use of megaman v0.2, which is one version deprecated
+#We also install a custom version of the rmetric.py script
+
+#Optional: use 'export PYTHONNOUSERSITE=1' to avoid using previously installed packages
+
+#create new virtual environment
+conda create --name py35lynch python=3.5 jupyter
+
+#Optional: use envinorment_working.yml file instead
+
+#activate the environment
+source activate py35lynch
+
+#create a ipython instance
+ipython kernel install --user --name=py35lynch --display-name py35lynch
+
+#Install all dependencies and updates
+conda install --channel=conda-forge pip nose coverage cython numpy scipy scikit-learn pyflann=1.8.4 pyamg h5py plotly
+conda install megaman --channel=conda-forge
+
+#Optional: reinstall the following packages
+conda install matplotlib  
+conda install numpy
+pip install -U matplotlib
+
+#finally, copy and paste the attached rmetric.py file into your megaman installation, replacing the original.
+
+
+
